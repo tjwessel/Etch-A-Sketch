@@ -38,7 +38,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
-    /* align-items: flex-start; */
 }
 .cursive {
     font-family: 'Whisper', cursive;
@@ -65,8 +64,48 @@ body {
 }
 .box {
     flex: 1 1 35px;
+    transition: background-color 2s;
 }
 
 .black {
     background-color: black;
+    transition: background-color 0s;
+    
+}
+
+
+#shake {
+    font-family: 'Ubuntu', sans-serif;
+    color: #D4AF37;
+    font-size: 20px;
+    border-style: none;
+    height: 80px;
+    width: 160px;
+    border-radius: 20px;
+    background: linear-gradient(225deg, #bb062b, #9e0524);
+    box-shadow:  -6px 6px 12px #970522,
+             6px -6px 12px #c8072e;
+    margin: 10px 20px;
+    transition: 200ms;
+}
+#shake:active {
+    box-shadow: -2px 2px 4px #970522, 2px -2px 4px #c8072e;
+    background: linear-gradient(225deg, hsl(348deg 94% 37%), hsl(348deg 94% 31%));
+    font-size: 19px;
+}
+
+.shaking {
+    animation: shake 2s;
+    
+}
+
+@keyframes shake {
+    0% {transform: translate(2px, 2px) rotate(0deg)}
+    40% {transform: translate(2px, -2px) rotate(2deg)}
+    50% {transform: translate(-12x, 5px) rotate(-2deg)}
+    60% {transform: translate(-6px, 2px) rotate(0deg)}
+    70% {transform: translate(6px, 2px) rotate(-2deg)}
+    80% {transform: translate(-2px, -2px) rotate(2deg)}
+    90% {transform: translate(2px, 4px) rotate(0deg)}
+    100% {transform: translate(2px, -4px) rotate(-2deg)}
 }

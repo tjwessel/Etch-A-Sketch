@@ -1,3 +1,4 @@
+const device = document.querySelector('#etchDevice');
 const screen = document.querySelector('#screen');
 let mouseDown = false
 screen.addEventListener('mousedown', () => mouseDown = true);
@@ -19,3 +20,11 @@ boxes.forEach(box => box.addEventListener('mouseover', () => {
  if (mouseDown) box.classList.add('black');   
 }));
 
+boxes.forEach(box => box.addEventListener('mousedown', () =>  box.classList.add('black')));
+
+const shakeBtn = document.querySelector('#shake');
+shakeBtn.addEventListener('click', () => {
+    boxes.forEach(box => box.classList.remove('black'));
+    etchDevice.classList.add('shaking');
+})
+etchDevice.addEventListener('animationend', () => etchDevice.classList.remove('shaking'));
